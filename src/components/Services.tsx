@@ -238,10 +238,10 @@ const Services = () => {
                 {/* Price and CTA */}
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   <span className="text-lg font-bold text-primary-600">{service.price}</span>
-                  <button className="flex items-center space-x-1 text-primary-600 hover:text-primary-700 font-medium group-hover:translate-x-1 transition-all duration-200">
+                  <a href="#contact" className="flex items-center space-x-1 text-primary-600 hover:text-primary-700 font-medium group-hover:translate-x-1 transition-all duration-200">
                     <span className="text-sm">Заказать</span>
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -255,9 +255,9 @@ const Services = () => {
             <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
               Свяжитесь с нами, и мы найдем решение для любой полиграфической задачи
             </p>
-            <button className="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-200">
+            <a href="#contact" className="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-200 inline-block">
               Связаться с нами
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -18,8 +18,6 @@ const Header = () => {
   const navItems = [
     { href: '#home', label: 'Главная' },
     { href: '#services', label: 'Услуги' },
-    { href: '#gallery', label: 'Галерея' },
-    { href: '#about', label: 'О нас' },
     { href: '#contact', label: 'Контакты' },
   ]
 
@@ -34,14 +32,10 @@ const Header = () => {
             <div className="flex items-center space-x-4 text-gray-600">
               <div className="flex items-center space-x-1">
                 <Phone size={14} />
-                <span>+7 (777) 123-45-67</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Mail size={14} />
-                <span>info@sanali.kz</span>
+                <span>+7 (708) 812-13-72</span>
               </div>
             </div>
-            <div className="text-gray-600">
+            <div className="text-gray-600 hidden md:block">
               Работаем: Пн-Пт 9:00-18:00, Сб 10:00-16:00
             </div>
           </div>
@@ -74,9 +68,9 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200 font-medium">
-                Заказать
-              </button>
+              <a href="#services" className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200 font-medium">
+                Наши услуги
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -102,9 +96,9 @@ const Header = () => {
                     {item.label}
                   </a>
                 ))}
-                <button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-200 font-medium mt-4">
-                  Заказать
-                </button>
+                <a href="#services" className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-200 font-medium mt-4 block text-center">
+                  Наши услуги
+                </a>
               </div>
             </div>
           )}

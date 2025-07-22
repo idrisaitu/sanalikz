@@ -40,81 +40,31 @@
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
                         display: ['Poppins', 'system-ui', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-in-out',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                        'bounce-slow': 'bounce 2s infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.3)' },
-                            '50%': { boxShadow: '0 0 40px rgba(14, 165, 233, 0.6)' },
-                        },
-                    },
+                    }
                 }
             }
         }
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .line-clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
+        html { scroll-behavior: smooth; }
         .gradient-bg {
             background: linear-gradient(-45deg, #0ea5e9, #d946ef, #0284c7, #c026d3);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
         }
-        
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        
-        .glass {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
+        .glass { backdrop-filter: blur(10px); background: rgba(255, 255, 255, 0.1); }
     </style>
 </head>
 <body class="font-sans antialiased">
     <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
         <div class="container mx-auto px-4">
-            <!-- Top bar -->
-            <div id="topBar" class="py-2 border-b border-gray-200/20">
+            <div class="py-2 border-b border-gray-200/20">
                 <div class="flex justify-between items-center text-sm">
                     <div class="flex items-center space-x-4 text-gray-600">
                         <div class="flex items-center space-x-1">
@@ -123,61 +73,28 @@
                             </svg>
                             <span>+7 (708) 812-13-72</span>
                         </div>
-
                     </div>
                     <div class="text-gray-600 hidden md:block">
                         Работаем: Пн-Пт 9:00-18:00, Сб 10:00-16:00
                     </div>
                 </div>
             </div>
-
-            <!-- Main navigation -->
             <nav class="py-4">
                 <div class="flex justify-between items-center">
-                    <!-- Logo -->
                     <div class="flex items-center space-x-2">
                         <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
                             <span class="text-white font-bold text-xl">S</span>
                         </div>
                         <div>
-                            <h1 class="text-2xl font-display font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                                Sanali
-                            </h1>
+                            <h1 class="text-2xl font-display font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">Sanali</h1>
                             <p class="text-xs text-gray-500 -mt-1">Полиграфия</p>
                         </div>
                     </div>
-
-                    <!-- Desktop Navigation -->
                     <div class="hidden md:flex items-center space-x-8">
                         <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium">Главная</a>
                         <a href="#services" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium">Услуги</a>
-                        <a href="#gallery" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium">Галерея</a>
-                        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium">О нас</a>
                         <a href="#contact" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium">Контакты</a>
-                        <a href="#services" class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200 font-medium">
-                            Наши услуги
-                        </a>
-                    </div>
-
-                    <!-- Mobile menu button -->
-                    <button id="mobileMenuBtn" class="md:hidden p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- Mobile Navigation -->
-                <div id="mobileMenu" class="md:hidden mt-4 py-4 border-t border-gray-200 hidden">
-                    <div class="flex flex-col space-y-4">
-                        <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2">Главная</a>
-                        <a href="#services" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2">Услуги</a>
-                        <a href="#gallery" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2">Галерея</a>
-                        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2">О нас</a>
-                        <a href="#contact" class="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium py-2">Контакты</a>
-                        <a href="#services" class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-200 font-medium mt-4 block text-center">
-                            Наши услуги
-                        </a>
+                        <a href="#services" class="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200 font-medium">Наши услуги</a>
                     </div>
                 </div>
             </nav>
@@ -186,20 +103,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-32">
-        <!-- Background with gradient overlay -->
         <div class="absolute inset-0 gradient-bg">
             <div class="absolute inset-0 bg-black/50"></div>
-            
-            <!-- Animated background elements -->
-            <div class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary-500/5 to-secondary-500/5 rounded-full blur-3xl animate-bounce-slow"></div>
         </div>
-
         <div class="container mx-auto px-4 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left content -->
-                <div class="text-white space-y-8 animate-fade-in">
+                <div class="text-white space-y-8">
                     <div class="space-y-6">
                         <div class="inline-flex items-center space-x-2 glass rounded-full px-4 py-2 text-sm">
                             <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -207,109 +116,38 @@
                             </svg>
                             <span>Лучшая полиграфия в Казахстане</span>
                         </div>
-                        
                         <h1 class="text-5xl lg:text-7xl font-display font-bold leading-tight">
-                            <span class="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                                Sanali
-                            </span>
-                            <br />
-                            <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-                                Полиграфия
-                            </span>
+                            <span class="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Sanali</span><br>
+                            <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Полиграфия</span>
                         </h1>
-                        
                         <p class="text-xl text-gray-300 max-w-lg leading-relaxed">
-                            Профессиональные полиграфические услуги: от визиток до крупноформатной печати. 
-                            Качество, скорость, индивидуальный подход.
+                            Профессиональные полиграфические услуги: от визиток до крупноформатной печати. Качество, скорость, индивидуальный подход.
                         </p>
                     </div>
-
-                    <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/77088121372?text=Здравствуйте! Хочу заказать полиграфические услуги" target="_blank" class="group bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-primary-500/25 transition-all duration-300 flex items-center justify-center space-x-2">
+                        <a href="https://wa.me/77088121372?text=Здравствуйте! Хочу заказать полиграфические услуги" target="_blank" class="group bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.382"/>
                             </svg>
                             <span>Напишите нам</span>
                         </a>
-                        
-                        <a href="#services" class="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 hover:border-white/50 transition-all duration-300 glass flex items-center justify-center">
-                            Наши услуги
-                        </a>
+                        <a href="#services" class="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 glass flex items-center justify-center">Наши услуги</a>
                     </div>
-
-                    <!-- Stats -->
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
-                        <div class="text-center space-y-2">
-                            <div class="flex justify-center">
-                                <svg class="w-8 h-8 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                </div>
+                <div class="relative">
+                    <div class="w-full h-[600px] rounded-2xl glass flex items-center justify-center">
+                        <div class="text-center text-white space-y-4">
+                            <div class="w-24 h-24 bg-white/20 rounded-full mx-auto flex items-center justify-center">
+                                <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/>
+                                    <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <div class="text-2xl font-bold text-white">1000+</div>
-                            <div class="text-sm text-gray-400">Довольных клиентов</div>
-                        </div>
-                        <div class="text-center space-y-2">
-                            <div class="flex justify-center">
-                                <svg class="w-8 h-8 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                                </svg>
-                            </div>
-                            <div class="text-2xl font-bold text-white">5+</div>
-                            <div class="text-sm text-gray-400">Лет опыта</div>
-                        </div>
-                        <div class="text-center space-y-2">
-                            <div class="flex justify-center">
-                                <svg class="w-8 h-8 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                            <div class="text-2xl font-bold text-white">24ч</div>
-                            <div class="text-sm text-gray-400">Быстрое выполнение</div>
-                        </div>
-                        <div class="text-center space-y-2">
-                            <div class="flex justify-center">
-                                <svg class="w-8 h-8 text-primary-400 fill-current" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                </svg>
-                            </div>
-                            <div class="text-2xl font-bold text-white">4.9</div>
-                            <div class="text-sm text-gray-400">Рейтинг качества</div>
+                            <h3 class="text-2xl font-bold">Печать на холстах</h3>
+                            <p class="text-gray-200">Превратите ваши фотографии в произведения искусства</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Right content - Visual showcase -->
-                <div class="relative animate-float">
-                    <div class="relative w-full h-[600px] rounded-2xl overflow-hidden glass">
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary-500/80 to-secondary-500/80"></div>
-                        
-                        <!-- Placeholder content -->
-                        <div class="w-full h-full flex items-center justify-center">
-                            <div class="text-center text-white space-y-4">
-                                <div class="w-24 h-24 bg-white/20 rounded-full mx-auto flex items-center justify-center animate-pulse-glow">
-                                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/>
-                                        <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/>
-                                    </svg>
-                                </div>
-                                <h3 class="text-2xl font-bold">Печать на холстах</h3>
-                                <p class="text-gray-200">Превратите ваши фотографии в произведения искусства</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Floating elements -->
-                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full opacity-20 animate-bounce-slow"></div>
-                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-full opacity-20 animate-bounce-slow"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                <div class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
             </div>
         </div>
     </section>
@@ -317,200 +155,30 @@
     <!-- Services Section -->
     <section id="services" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <!-- Section Header -->
             <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
-                    </svg>
-                    <span>Наши услуги</span>
-                </div>
-
                 <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6">
-                    Полный спектр
-                    <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent"> полиграфических услуг</span>
+                    Полный спектр <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">полиграфических услуг</span>
                 </h2>
-
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    От визиток до крупноформатной печати — мы предоставляем качественные полиграфические услуги
-                    для бизнеса и частных клиентов
+                    От визиток до крупноформатной печати — мы предоставляем качественные полиграфические услуги для бизнеса и частных клиентов
                 </p>
             </div>
-
-            <!-- Services Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Service Card 1 -->
-                <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover-lift">
-                    <div class="w-14 h-14 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <!-- Service cards would go here -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-14 h-14 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <div class="space-y-3">
-                        <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                            Печать на холстах
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Крупноформатная печать на холстах высокого качества
-                        </p>
-                        <ul class="space-y-1">
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Любые размеры</span>
-                            </li>
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Высокое качество</span>
-                            </li>
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Быстрое выполнение</span>
-                            </li>
-                        </ul>
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                            <span class="text-lg font-bold text-primary-600">от 5000 ₸</span>
-                            <a href="#contact" class="flex items-center space-x-1 text-primary-600 hover:text-primary-700 font-medium group-hover:translate-x-1 transition-all duration-200">
-                                <span class="text-sm">Заказать</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Печать на холстах</h3>
+                    <p class="text-gray-600 text-sm mb-4">Крупноформатная печать на холстах высокого качества</p>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <span class="text-lg font-bold text-primary-600">от 5000 ₸</span>
+                        <a href="#contact" class="text-primary-600 hover:text-primary-700 font-medium text-sm">Заказать</a>
                     </div>
                 </div>
-
-                <!-- Service Card 2 -->
-                <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover-lift">
-                    <div class="w-14 h-14 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                        </svg>
-                    </div>
-                    <div class="space-y-3">
-                        <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                            Визитки
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Профессиональные визитки для бизнеса
-                        </p>
-                        <ul class="space-y-1">
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Различные материалы</span>
-                            </li>
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Дизайн в подарок</span>
-                            </li>
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Срочное изготовление</span>
-                            </li>
-                        </ul>
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                            <span class="text-lg font-bold text-primary-600">от 50 ₸/шт</span>
-                            <a href="#contact" class="flex items-center space-x-1 text-primary-600 hover:text-primary-700 font-medium group-hover:translate-x-1 transition-all duration-200">
-                                <span class="text-sm">Заказать</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover-lift">
-                    <div class="w-14 h-14 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <div class="space-y-3">
-                        <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                            Открытки
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Персонализированные открытки для любых событий
-                        </p>
-                        <ul class="space-y-1">
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Индивидуальный дизайн</span>
-                            </li>
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Различные форматы</span>
-                            </li>
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Качественная бумага</span>
-                            </li>
-                        </ul>
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                            <span class="text-lg font-bold text-primary-600">от 200 ₸/шт</span>
-                            <a href="#contact" class="flex items-center space-x-1 text-primary-600 hover:text-primary-700 font-medium group-hover:translate-x-1 transition-all duration-200">
-                                <span class="text-sm">Заказать</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover-lift">
-                    <div class="w-14 h-14 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <div class="space-y-3">
-                        <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
-                            Лазерная гравировка
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Гравировка на табличках, сувенирах и других материалах
-                        </p>
-                        <ul class="space-y-1">
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Металл, дерево, пластик</span>
-                            </li>
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Высокая точность</span>
-                            </li>
-                            <li class="text-sm text-gray-500 flex items-center space-x-2">
-                                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
-                                <span>Долговечность</span>
-                            </li>
-                        </ul>
-                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                            <span class="text-lg font-bold text-primary-600">от 1000 ₸</span>
-                            <a href="#contact" class="flex items-center space-x-1 text-primary-600 hover:text-primary-700 font-medium group-hover:translate-x-1 transition-all duration-200">
-                                <span class="text-sm">Заказать</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="text-center mt-16">
-                <div class="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-white">
-                    <h3 class="text-2xl font-bold mb-4">Не нашли нужную услугу?</h3>
-                    <p class="text-primary-100 mb-6 max-w-2xl mx-auto">
-                        Свяжитесь с нами, и мы найдем решение для любой полиграфической задачи
-                    </p>
-                    <a href="#contact" class="bg-white text-primary-600 px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-200 inline-block">
-                        Связаться с нами
-                    </a>
-                </div>
+                <!-- More service cards... -->
             </div>
         </div>
     </section>
@@ -518,86 +186,44 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <!-- Section Header -->
             <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                    </svg>
-                    <span>Связаться с нами</span>
-                </div>
-
                 <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6">
-                    Готовы начать
-                    <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent"> ваш проект?</span>
+                    Готовы начать <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">ваш проект?</span>
                 </h2>
-
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Свяжитесь с нами любым удобным способом. Мы ответим на все ваши вопросы
-                    и поможем выбрать оптимальное решение для ваших задач.
-                </p>
             </div>
-
             <div class="grid lg:grid-cols-2 gap-16">
-                <!-- Contact Information -->
                 <div class="space-y-8">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Контактная информация</h3>
-
-                        <div class="grid gap-6">
-                            <!-- Phone -->
-                            <div class="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors">
-                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.382"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-2">WhatsApp</h4>
-                                    <p class="text-gray-600 text-sm">+7 (708) 812-13-72</p>
-                                </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Контактная информация</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.382"/>
+                                </svg>
                             </div>
-
-
-                            <!-- Address -->
-                            <div class="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors">
-                                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-2">Адрес</h4>
-                                    <p class="text-gray-600 text-sm">ЖК Тенгиз Тауэрс</p>
-                                    <p class="text-gray-600 text-sm">Улица Каныша Сатпаева, 30/1</p>
-                                    <p class="text-gray-600 text-sm">94 офис, 4 этаж</p>
-                                </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">WhatsApp</h4>
+                                <p class="text-gray-600 text-sm">+7 (708) 812-13-72</p>
                             </div>
-
-                            <!-- Working Hours -->
-                            <div class="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors">
-                                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-900 mb-2">Режим работы</h4>
-                                    <p class="text-gray-600 text-sm">Пн-Пт: 9:00 - 18:00</p>
-                                    <p class="text-gray-600 text-sm">Сб: 10:00 - 16:00</p>
-                                    <p class="text-gray-600 text-sm">Вс: выходной</p>
-                                </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-6 bg-gray-50 rounded-2xl">
+                            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Адрес</h4>
+                                <p class="text-gray-600 text-sm">ЖК Тенгиз Тауэрс</p>
+                                <p class="text-gray-600 text-sm">Улица Каныша Сатпаева, 30/1</p>
+                                <p class="text-gray-600 text-sm">94 офис, 4 этаж</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-                <!-- WhatsApp Contact -->
                 <div class="bg-gray-50 rounded-2xl p-8 text-center">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Свяжитесь с нами</h3>
-
                     <div class="mb-8">
                         <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 24 24">
@@ -605,62 +231,28 @@
                             </svg>
                         </div>
                         <h4 class="text-xl font-semibold text-gray-900 mb-2">WhatsApp</h4>
-                        <p class="text-gray-600 mb-6">
-                            Напишите нам в WhatsApp для быстрой консультации и оформления заказа
-                        </p>
+                        <p class="text-gray-600 mb-6">Напишите нам в WhatsApp для быстрой консультации и оформления заказа</p>
                     </div>
-
-                    <a
-                        href="https://wa.me/77088121372?text=Здравствуйте! Хочу заказать полиграфические услуги"
-                        target="_blank"
-                        class="inline-flex items-center justify-center space-x-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 hover:shadow-lg text-lg"
-                    >
+                    <a href="https://wa.me/77088121372?text=Здравствуйте! Хочу заказать полиграфические услуги" target="_blank" class="inline-flex items-center justify-center space-x-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 hover:shadow-lg text-lg">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.382"/>
                         </svg>
                         <span>Напишите нам</span>
                     </a>
-
-                    
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            const topBar = document.getElementById('topBar');
-            
-            if (window.scrollY > 50) {
-                topBar.classList.add('hidden');
-            } else {
-                topBar.classList.remove('hidden');
-            }
-        });
-
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
             });
         });
     </script>
